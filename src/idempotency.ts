@@ -1,3 +1,3 @@
 export function normalizeKey(key: string): string {
-  return key.toLowerCase();
+  return key.normalize("NFKC").replace(/\p{Cf}/gu, "").trim().toLowerCase();
 }
